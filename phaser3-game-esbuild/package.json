@@ -1,0 +1,30 @@
+{
+    "name": "simple-phaser3-platformer",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "dependencies": {
+        "easystarjs": "^0.4.4",
+        "esbuild": "^0.12.9",
+        "eventemitter3": "^4.0.7",
+        "inherits": "^2.0.3",
+        "path": "^0.12.7",
+        "phaser": "^3.55.2",
+        "phaser3-nineslice": "^0.5.0",
+        "process": "^0.11.10",
+        "util": "^0.10.4"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.14",
+        "concurrently": "^6.2.0"
+    },
+    "scripts": {
+        "serve": "browser-sync start --server --files 'index.html'",
+        "build": "esbuild main.js --bundle --minify --sourcemap --target=esnext --outfile=dist/main.js",
+        "watch": "npm run build -- --watch",
+        "start": "concurrently \"npm:serve\" \"npm:watch\""
+    },
+    "keywords": [],
+    "author": "Jean-Louis",
+    "license": "ISC"
+}
